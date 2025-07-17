@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import Icon from '../../../components/icons/index.vue'
-import { conversionTypes } from '../../../data/conversions'
+import Icon from '@/components/icons/index.vue'
+import { conversionTypes } from '@/data/conversions'
 
 const { t } = useI18n()
 </script>
@@ -19,11 +19,11 @@ const { t } = useI18n()
       <router-link
         v-for="type in conversionTypes"
         :key="type.id"
-        :to="`/tools/converters/${type.id}`"
+        :to="type.path"
         class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center hover:shadow-lg transition-shadow"
       >
-        <div class="bg-blue-100 p-3 rounded-full mb-3">
-          <Icon :name="type.icon" :size="24" color="#3b82f6" />
+        <div class="p-3 rounded-full mb-3" :style="{ backgroundColor: `${type.color}15` }">
+          <Icon :name="type.icon" :size="24" :color="type.color" />
         </div>
         <h3 class="text-lg font-medium text-center">
           {{ t(type.id) }}

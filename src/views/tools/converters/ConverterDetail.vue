@@ -2,10 +2,10 @@
 import { computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
-import Icon from '../../../components/icons/index.vue'
-import UnitConverter from '../../../components/UnitConverter.vue'
-import { useUnitConverter } from '../../../composables/useUnitConverter'
-import * as conversions from '../../../data/conversions'
+import Icon from '@/components/icons/index.vue'
+import UnitConverter from '@/components/UnitConverter.vue'
+import { useUnitConverter } from '@/composables/useUnitConverter'
+import * as conversions from '@/data/conversions'
 
 const props = defineProps<{
   type: string

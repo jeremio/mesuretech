@@ -27,9 +27,13 @@
   "copied": "Copié !",
   "reset": "Réinitialiser",
   "physical_quantities": "Grandeurs physiques",
+  "physical_quantities_short_desc": "Découvrez les grandeurs physiques fondamentales et dérivées qui décrivent notre univers.",
   "measurement_units": "Unités de mesure",
+  "measurement_units_short_desc": "Explorez les différentes unités utilisées pour quantifier les grandeurs physiques.",
   "si_prefixes": "Préfixes SI",
+  "si_prefixes_short_desc": "Apprenez les préfixes du Système International qui multiplient les unités de base.",
   "systems_of_units": "Systèmes d'unités",
+  "systems_of_units_short_desc": "Découvrez les différents systèmes normalisés regroupant des unités de mesure cohérentes.",
 
   "length": "Longueur",
   "mass": "Masse",
@@ -49,7 +53,6 @@
   "frequency": "Fréquence",
   "force": "Force",
   "learn_more": "En savoir plus",
-  "systems_of-units": "Systèmes d'unités",
 
   "meter": "Mètre",
   "kilometer": "Kilomètre",

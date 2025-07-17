@@ -27,9 +27,13 @@
   "copied": "Copied!",
   "reset": "Reset",
   "physical_quantities": "Physical Quantities",
+  "physical_quantities_short_desc": "Discover the fundamental and derived physical quantities that describe our universe.",
   "measurement_units": "Measurement Units",
+  "measurement_units_short_desc": "Explore the different units used to quantify physical quantities.",
   "si_prefixes": "SI Prefixes",
+  "si_prefixes_short_desc": "Learn about the International System prefixes that multiply base units.",
   "systems_of_units": "Systems of Units",
+  "systems_of_units_short_desc": "Discover the different standardized systems that group together coherent units of measurement.",
 
   "length": "Length",
   "mass": "Mass",
@@ -49,7 +53,6 @@
   "frequency": "Frequency",
   "force": "Force",
   "learn_more": "Learn more",
-  "systems_of-units": "Systems of Units",
 
   "meter": "Meter",
   "kilometer": "Kilometer",

@@ -1,4 +1,4 @@
-import type { ConversionFactor, UnitOption } from '../../composables/useUnitConverter'
+import type { ConversionFactor, UnitOption } from '@/composables/useUnitConverter'
 
 // Options d'unités pour les volumes
 export const volumeUnits: UnitOption[] = [

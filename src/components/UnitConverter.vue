@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { UnitOption } from '../composables/useUnitConverter'
+import type { UnitOption } from '@/composables/useUnitConverter'
 import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 

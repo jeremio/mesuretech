@@ -2,7 +2,7 @@
 import { computed, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
-import Icon from '../../../components/icons/index.vue'
+import Icon from '@/components/icons/index.vue'
 
 const props = defineProps<{
   category: string
@@ -16,27 +16,27 @@ const contentHtml = ref('')
 // Obtenir le titre et le contenu en fonction de la catégorie
 const categoryInfo = computed(() => {
   switch (props.category) {
-    case 'physical-quantities':
+    case 'physical_quantities':
       return {
         title: 'physical_quantities',
         icon: 'document',
         color: '#3b82f6',
       }
-    case 'measurement-units':
+    case 'measurement_units':
       return {
         title: 'measurement_units',
         icon: 'calculator',
         color: '#10b981',
       }
-    case 'si-prefixes':
+    case 'si_prefixes':
       return {
         title: 'si_prefixes',
         icon: 'document',
         color: '#f59e0b',
       }
-    case 'systems-of-units':
+    case 'systems_of_units':
       return {
-        title: 'systems_of-units',
+        title: 'systems_of_units',
         icon: 'book-open',
         color: '#8b5cf6',
       }
@@ -47,7 +47,7 @@ const categoryInfo = computed(() => {
 
 // Vérifier si la catégorie est valide et rediriger si nécessaire
 watch(() => props.category, (newCategory) => {
-  const validCategories = ['physical-quantities', 'measurement-units', 'si-prefixes', 'systems-of-units']
+  const validCategories = ['physical_quantities', 'measurement_units', 'si_prefixes', 'systems_of_units']
   if (!validCategories.includes(newCategory)) {
     router.push('/tools/guide')
   }
@@ -56,67 +56,220 @@ watch(() => props.category, (newCategory) => {
 // Fonction pour générer le contenu en fonction de la catégorie
 onMounted(() => {
   switch (props.category) {
-    case 'physical-quantities':
+    case 'physical_quantities':
       contentHtml.value = generatePhysicalQuantitiesContent()
       break
-    case 'measurement-units':
+    case 'measurement_units':
       contentHtml.value = generateMeasurementUnitsContent()
       break
-    case 'si-prefixes':
+    case 'si_prefixes':
       contentHtml.value = generateSIPrefixesContent()
       break
-    case 'systems-of-units':
+    case 'systems_of_units':
       contentHtml.value = generateSystemsOfUnitsContent()
       break
   }
+
+  // Générer la table des matières après le rendu du contenu
+  setTimeout(() => {
+    generateTableOfContents()
+  }, 100)
 })
+
+// Fonction pour générer la table des matières à partir des titres
+function generateTableOfContents() {
+  const contentElement = document.querySelector('.prose')
+  const tocElement = document.getElementById('toc')
+
+  if (contentElement && tocElement) {
+    const headings = contentElement.querySelectorAll('h3, h4')
+    let tocHtml = ''
+
+    headings.forEach((heading, index) => {
+      // Ajouter un ID au titre s'il n'en a pas
+      if (!heading.id) {
+        heading.id = `section-${index}`
+      }
+
+      const isSubheading = heading.tagName === 'H4'
+
+      tocHtml += `
+        <a
+          href="#${heading.id}"
+          class="block ${isSubheading ? 'ml-4 text-gray-600' : 'font-medium text-gray-800'} hover:text-blue-600 transition-colors"
+        >
+          ${heading.textContent}
+        </a>
+      `
+    })
+
+    tocElement.innerHTML = tocHtml
+  }
+}
 
 // Génération du contenu sur les grandeurs physiques
 function generatePhysicalQuantitiesContent() {
   return `
-    <div class="prose prose-blue max-w-none">
-      <h3>Qu'est-ce qu'une grandeur physique ?</h3>
-      <p>
-        Une <strong>grandeur physique</strong> est une caractéristique mesurable d'un phénomène, d'un corps ou d'une substance.
-        C'est l'idée abstraite de ce que vous souhaitez quantifier, indépendamment de l'unité utilisée pour l'exprimer.
-      </p>
+    <h3 id="definition">Qu'est-ce qu'une grandeur physique ?</h3>
+    <p>
+      Une <strong>grandeur physique</strong> est une caractéristique mesurable d'un phénomène, d'un corps ou d'une substance.
+      C'est l'idée abstraite de ce que vous souhaitez quantifier, indépendamment de l'unité utilisée pour l'exprimer.
+    </p>
 
-      <p>Les grandeurs physiques présentent deux caractéristiques essentielles :</p>
-      <ul>
-        <li>Elles représentent la "nature" de ce que l'on mesure (ex: la longueur d'une table, la masse d'une pomme).</li>
-        <li>Elles sont indépendantes du système de mesure choisi. La température d'une pièce est une grandeur physique, peu importe si on la mesure en Celsius ou en Fahrenheit.</li>
+    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 my-4 rounded">
+      <p class="font-medium">Important à retenir :</p>
+      <ul class="mt-2">
+        <li>Les grandeurs physiques décrivent <em>ce qui</em> est mesuré (longueur, masse, temps...)</li>
+        <li>Les unités de mesure définissent <em>comment</em> on le mesure (mètre, kilogramme, seconde...)</li>
       </ul>
+    </div>
 
-      <h3>Types de grandeurs physiques</h3>
+    <p>Les grandeurs physiques présentent deux caractéristiques essentielles :</p>
+    <ul>
+      <li>Elles représentent la "nature" de ce que l'on mesure (ex: la longueur d'une table, la masse d'une pomme).</li>
+      <li>Elles sont indépendantes du système de mesure choisi. La température d'une pièce est une grandeur physique, peu importe si on la mesure en Celsius ou en Fahrenheit.</li>
+    </ul>
 
-      <h4>Grandeurs fondamentales</h4>
-      <p>
-        Ces grandeurs sont considérées comme indépendantes les unes des autres et servent de base au Système International d'unités (SI).
-      </p>
-      <ul>
-        <li><strong>Longueur</strong> : Distance entre deux points.</li>
-        <li><strong>Masse</strong> : Quantité de matière d'un corps.</li>
-        <li><strong>Temps</strong> : Durée d'un phénomène.</li>
-        <li><strong>Courant électrique</strong> : Flux de charges électriques.</li>
-        <li><strong>Température</strong> : Niveau d'agitation thermique.</li>
-        <li><strong>Quantité de matière</strong> : Nombre d'entités élémentaires.</li>
-        <li><strong>Intensité lumineuse</strong> : Puissance lumineuse émise.</li>
-      </ul>
+    <h3 id="fondamentales">Les 7 grandeurs fondamentales</h3>
+    <p>
+      Ces grandeurs sont considérées comme indépendantes les unes des autres et servent de base au Système International d'unités (SI).
+      Toutes les autres grandeurs peuvent être dérivées de ces grandeurs fondamentales.
+    </p>
 
-      <h4>Grandeurs dérivées</h4>
-      <p>
-        Ces grandeurs sont définies à partir des grandeurs fondamentales par des relations mathématiques.
-      </p>
-      <ul>
-        <li><strong>Surface</strong> : Aire d'une figure (dérivée de la longueur).</li>
-        <li><strong>Volume</strong> : Espace occupé par un corps (dérivée de la longueur).</li>
-        <li><strong>Vitesse</strong> : Rapport entre une distance et un temps.</li>
-        <li><strong>Accélération</strong> : Variation de la vitesse par unité de temps.</li>
-        <li><strong>Force</strong> : Grandeur qui provoque le mouvement ou la déformation d'un corps.</li>
-        <li><strong>Pression</strong> : Force par unité de surface.</li>
-        <li><strong>Énergie</strong> : Capacité à produire un travail.</li>
-        <li><strong>Puissance</strong> : Énergie par unité de temps.</li>
-      </ul>
+    <div class="overflow-x-auto my-4">
+      <table class="min-w-full bg-white border border-gray-300">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="px-4 py-2 border-b">Grandeur</th>
+            <th class="px-4 py-2 border-b">Symbole</th>
+            <th class="px-4 py-2 border-b">Unité SI</th>
+            <th class="px-4 py-2 border-b">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="px-4 py-2 border-b font-medium">Longueur</td>
+            <td class="px-4 py-2 border-b">L</td>
+            <td class="px-4 py-2 border-b">mètre (m)</td>
+            <td class="px-4 py-2 border-b">Distance entre deux points</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border-b font-medium">Masse</td>
+            <td class="px-4 py-2 border-b">M</td>
+            <td class="px-4 py-2 border-b">kilogramme (kg)</td>
+            <td class="px-4 py-2 border-b">Quantité de matière d'un corps</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border-b font-medium">Temps</td>
+            <td class="px-4 py-2 border-b">T</td>
+            <td class="px-4 py-2 border-b">seconde (s)</td>
+            <td class="px-4 py-2 border-b">Durée d'un phénomène</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border-b font-medium">Courant électrique</td>
+            <td class="px-4 py-2 border-b">I</td>
+            <td class="px-4 py-2 border-b">ampère (A)</td>
+            <td class="px-4 py-2 border-b">Flux de charges électriques</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border-b font-medium">Température</td>
+            <td class="px-4 py-2 border-b">Θ</td>
+            <td class="px-4 py-2 border-b">kelvin (K)</td>
+            <td class="px-4 py-2 border-b">Niveau d'agitation thermique</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border-b font-medium">Quantité de matière</td>
+            <td class="px-4 py-2 border-b">N</td>
+            <td class="px-4 py-2 border-b">mole (mol)</td>
+            <td class="px-4 py-2 border-b">Nombre d'entités élémentaires</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border-b font-medium">Intensité lumineuse</td>
+            <td class="px-4 py-2 border-b">J</td>
+            <td class="px-4 py-2 border-b">candela (cd)</td>
+            <td class="px-4 py-2 border-b">Puissance lumineuse émise</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 id="derivees">Grandeurs dérivées</h3>
+    <p>
+      Ces grandeurs sont définies à partir des grandeurs fondamentales par des relations mathématiques.
+      Voici quelques exemples importants :
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <div class="bg-white border rounded-lg p-4 shadow-sm">
+        <h4 class="font-medium text-blue-700 mb-2">Surface (Aire)</h4>
+        <p>Espace bidimensionnel occupé par une figure.</p>
+        <div class="mt-2 text-sm bg-gray-50 p-2 rounded">
+          <p><strong>Unité SI</strong> : mètre carré (m²)</p>
+          <p><strong>Formule</strong> : Longueur × Largeur</p>
+        </div>
+      </div>
+
+      <div class="bg-white border rounded-lg p-4 shadow-sm">
+        <h4 class="font-medium text-blue-700 mb-2">Volume</h4>
+        <p>Espace tridimensionnel occupé par un corps.</p>
+        <div class="mt-2 text-sm bg-gray-50 p-2 rounded">
+          <p><strong>Unité SI</strong> : mètre cube (m³)</p>
+          <p><strong>Formule</strong> : Longueur × Largeur × Hauteur</p>
+        </div>
+      </div>
+
+      <div class="bg-white border rounded-lg p-4 shadow-sm">
+        <h4 class="font-medium text-blue-700 mb-2">Vitesse</h4>
+        <p>Taux de variation de la position d'un objet.</p>
+        <div class="mt-2 text-sm bg-gray-50 p-2 rounded">
+          <p><strong>Unité SI</strong> : mètre par seconde (m/s)</p>
+          <p><strong>Formule</strong> : Distance ÷ Temps</p>
+        </div>
+      </div>
+
+      <div class="bg-white border rounded-lg p-4 shadow-sm">
+        <h4 class="font-medium text-blue-700 mb-2">Force</h4>
+        <p>Interaction qui modifie l'état de mouvement d'un objet.</p>
+        <div class="mt-2 text-sm bg-gray-50 p-2 rounded">
+          <p><strong>Unité SI</strong> : newton (N)</p>
+          <p><strong>Formule</strong> : Masse × Accélération</p>
+        </div>
+      </div>
+
+      <div class="bg-white border rounded-lg p-4 shadow-sm">
+        <h4 class="font-medium text-blue-700 mb-2">Pression</h4>
+        <p>Force exercée par unité de surface.</p>
+        <div class="mt-2 text-sm bg-gray-50 p-2 rounded">
+          <p><strong>Unité SI</strong> : pascal (Pa)</p>
+          <p><strong>Formule</strong> : Force ÷ Surface</p>
+        </div>
+      </div>
+
+      <div class="bg-white border rounded-lg p-4 shadow-sm">
+        <h4 class="font-medium text-blue-700 mb-2">Énergie</h4>
+        <p>Capacité à produire un travail ou un transfert de chaleur.</p>
+        <div class="mt-2 text-sm bg-gray-50 p-2 rounded">
+          <p><strong>Unité SI</strong> : joule (J)</p>
+          <p><strong>Formule</strong> : Force × Distance</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 id="applications">Applications pratiques</h3>
+    <p>
+      La compréhension des grandeurs physiques est fondamentale dans de nombreux domaines :
+    </p>
+
+    <ul>
+      <li><strong>Sciences et ingénierie</strong> : Conception, analyse et résolution de problèmes</li>
+      <li><strong>Médecine</strong> : Mesure des paramètres physiologiques comme la pression artérielle</li>
+      <li><strong>Commerce</strong> : Mesure des quantités de marchandises (masse, volume)</li>
+      <li><strong>Vie quotidienne</strong> : Cuisine (volumes, masses), construction (longueurs, surfaces)</li>
+    </ul>
+
+    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-4 rounded">
+      <p class="font-medium">Bon à savoir :</p>
+      <p class="mt-1">Chaque grandeur physique possède une dimension unique qui la caractérise. Par exemple, toutes les grandeurs de longueur ont la dimension [L], tandis que les vitesses ont la dimension [L]/[T].</p>
     </div>
   `
 }

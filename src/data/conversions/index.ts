@@ -23,11 +23,11 @@ export { volumeConversionFactors, volumeUnits } from './volumeConversions'
 
 // Mapping des types de conversion aux labels i18n
 export const conversionTypes = [
-  { id: 'length', icon: 'ruler' },
-  { id: 'mass', icon: 'weight' },
-  { id: 'temperature', icon: 'thermometer' },
-  { id: 'volume', icon: 'beaker' },
-  { id: 'area', icon: 'square' },
-  { id: 'speed', icon: 'speedometer' },
-  { id: 'data', icon: 'database' },
+  { id: 'length', icon: 'ruler', color: '#3b82f6', path: '/tools/converters/length' },
+  { id: 'mass', icon: 'weight', color: '#10b981', path: '/tools/converters/mass' },
+  { id: 'temperature', icon: 'thermometer', color: '#f59e0b', path: '/tools/converters/temperature' },
+  { id: 'volume', icon: 'beaker', color: '#8b5cf6', path: '/tools/converters/volume' },
+  { id: 'area', icon: 'square', color: '#ec4899', path: '/tools/converters/area' },
+  { id: 'speed', icon: 'speedometer', color: '#06b6d4', path: '/tools/converters/speed' },
+  { id: 'data', icon: 'database', color: '#14b8a6', path: '/tools/converters/data' },
 ]
