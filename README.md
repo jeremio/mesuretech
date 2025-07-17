@@ -1,4 +1,4 @@
-# Mon Projet Vue
+# Mesure Tech
 
 Une application SPA moderne créée avec Vue.js 3, Vite, TypeScript et Tailwind CSS 4.
 
