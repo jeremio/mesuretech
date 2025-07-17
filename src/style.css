@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles globaux additionnels */
+body {
+  @apply bg-gray-50 text-gray-900 min-h-screen;
+}
+
+/* Styles pour les routeur-link actifs */
+.router-link-active {
+  @apply font-medium text-blue-500;
+}

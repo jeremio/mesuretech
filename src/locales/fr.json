@@ -1,0 +1,11 @@
+{
+  "welcome": "Bienvenue sur notre application !",
+  "hello_world": "Bonjour le monde !",
+  "about_us": "À propos de nous",
+  "nav_home": "Accueil",
+  "nav_about": "À propos",
+  "not_found": "Page non trouvée",
+  "not_found_message": "Désolé, la page que vous recherchez n'existe pas.",
+  "back_to_home": "Retour à l'accueil",
+  "about_text": "Cette application a été créée avec Vue.js 3, Vite.js, TypeScript et Tailwind CSS 4."
+}
