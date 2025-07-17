@@ -1,5 +1,5 @@
 {
-  "welcome": "Bienvenue sur notre application !",
+  "welcome": "Bienvenue sur MesureTech !",
   "hello_world": "Bonjour le monde !",
   "about_us": "À propos de nous",
   "nav_home": "Accueil",
@@ -10,7 +10,7 @@
   "not_found": "Page non trouvée",
   "not_found_message": "Désolé, la page que vous recherchez n'existe pas.",
   "back_to_home": "Retour à l'accueil",
-  "about_text": "Cette application a été créée avec Vue.js 3, Vite.js, TypeScript et Tailwind CSS 4.",
+  "about_text": "MesureTech a été créée avec Vue.js 3, Vite.js, TypeScript et Tailwind CSS 4. Cette application vous aide à comprendre et convertir différentes unités de mesure.",
   "tools_title": "Outils de mesure et conversion",
   "tools_description": "Découvrez nos outils pratiques pour comprendre et convertir différentes unités de mesure.",
   "guide_introduction": "Bienvenue dans notre guide des unités de mesure. Explorez les différentes catégories pour en apprendre davantage.",
