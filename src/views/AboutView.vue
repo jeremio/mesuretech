@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 const technologies = ref([
   {
@@ -15,17 +16,18 @@ const technologies = ref([
     description: 'Framework CSS utilitaire pour créer des designs personnalisés',
   },
 ])
+const { t } = useI18n()
 </script>
 
 <template>
   <div class="py-8">
     <h1 class="text-3xl font-bold mb-6 text-center text-blue-700">
-      {{ $t('about_us') }}
+      {{ t('about_us') }}
     </h1>
 
     <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8">
       <p class="text-lg mb-6">
-        {{ $t('about_text') }}
+        {{ t('about_text') }}
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">

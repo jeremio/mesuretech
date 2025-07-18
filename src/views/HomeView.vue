@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import Icon from '@/components/icons/index.vue'
 import { conversionTypes } from '@/data/conversions'
 
+const { t } = useI18n()
 const router = useRouter()
 
 // Récupération des 4 convertisseurs les plus populaires
@@ -28,7 +30,7 @@ function navigateTo(path: string) {
       <div class="flex flex-col md:flex-row items-center bg-gradient-to-r from-blue-600 to-indigo-800 rounded-xl overflow-hidden shadow-xl">
         <div class="p-8 md:p-10 md:w-3/5 text-white">
           <h1 class="text-3xl md:text-4xl font-bold mb-4">
-            {{ $t('welcome') }}
+            {{ t('welcome') }}
           </h1>
           <p class="text-lg md:text-xl mb-6 opacity-90">
             Convertissez facilement entre différentes unités de mesure et apprenez les principes fondamentaux des systèmes de mesure.
@@ -39,14 +41,14 @@ function navigateTo(path: string) {
               @click="navigateTo('/tools/converters')"
             >
               <Icon name="exchange" :size="20" class="mr-2" />
-              {{ $t('nav_tools_converters') }}
+              {{ t('nav_tools_converters') }}
             </button>
             <button
               class="bg-blue-700 text-white hover:bg-blue-800 px-6 py-3 rounded-lg font-medium transition-colors border border-white flex items-center"
               @click="navigateTo('/tools/guide')"
             >
               <Icon name="book-open" :size="20" class="mr-2" />
-              {{ $t('nav_tools_guide') }}
+              {{ t('nav_tools_guide') }}
             </button>
           </div>
         </div>
@@ -82,7 +84,7 @@ function navigateTo(path: string) {
             <Icon :name="converter.icon" :size="32" :color="converter.color" />
           </div>
           <h3 class="text-lg font-medium text-center">
-            {{ $t(converter.id) }}
+            {{ t(converter.id) }}
           </h3>
         </div>
       </div>
@@ -117,13 +119,13 @@ function navigateTo(path: string) {
             </div>
             <div>
               <h3 class="text-lg font-medium mb-2">
-                {{ $t(category.id.replace('-', '_')) }}
+                {{ t(category.id.replace('-', '_')) }}
               </h3>
               <p class="text-gray-600 text-sm mb-3">
-                {{ $t(`${category.id.replace('-', '_')}_short_desc`) }}
+                {{ t(`${category.id.replace('-', '_')}_short_desc`) }}
               </p>
               <div class="text-sm text-blue-600 flex items-center">
-                {{ $t('learn_more') }}
+                {{ t('learn_more') }}
                 <Icon name="arrow-right" :size="14" class="ml-1" />
               </div>
             </div>

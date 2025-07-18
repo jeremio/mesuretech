@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
 const { locale } = useI18n()
 const currentLanguage = computed(() => locale.value)
 
@@ -19,15 +20,15 @@ function toggleLanguage() {
         </h1>
         <div class="flex gap-6 items-center">
           <router-link to="/" class="hover:text-blue-300 transition-colors">
-            {{ $t('nav_home') }}
+            {{ t('nav_home') }}
           </router-link>
 
           <router-link to="/tools/converters" class="hover:text-blue-300 transition-colors">
-            {{ $t('nav_tools_converters') }}
+            {{ t('nav_tools_converters') }}
           </router-link>
 
           <router-link to="/tools/guide" class="hover:text-blue-300 transition-colors">
-            {{ $t('nav_tools_guide') }}
+            {{ t('nav_tools_guide') }}
           </router-link>
 
           <button
@@ -53,7 +54,7 @@ function toggleLanguage() {
         <p>© {{ new Date().getFullYear() }} MesureTech</p>
         <div class="flex gap-4">
           <router-link to="/about" class="text-white hover:text-blue-300 transition-colors">
-            {{ $t('nav_about') }}
+            {{ t('nav_about') }}
           </router-link>
         </div>
       </div>
