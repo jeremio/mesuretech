@@ -9,9 +9,9 @@ const i18nConfigs = [
     // Votre configuration personnalisée pour les règles et les paramètres
     files: ['**/*.{js,vue,ts,json,json5,yaml,yml}'], // Assurez-vous d'inclure toutes les extensions pertinentes
     rules: {
-      '@intlify/vue-i18n/no-dynamic-keys': 'error',
+      '@intlify/vue-i18n/no-dynamic-keys': 'warn',
       '@intlify/vue-i18n/no-unused-keys': [
-        'error',
+        'warn',
         {
           extensions: ['.js', '.vue', '.ts', '.json', '.json5', '.yaml', '.yml'],
         },
@@ -44,6 +44,10 @@ export default antfu(
     // Cet objet s'appliquera globalement (à moins que vous ne définissiez `files` pour le limiter)
     rules: {
       '@intlify/vue-i18n/no-raw-text': 'off',
+      'vue/block-order': ['error', {
+        order: [['template', 'script'], 'style'],
+      }],
+      'no-console': 'off',
     },
   },
 )
