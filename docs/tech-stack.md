@@ -32,7 +32,7 @@ Ce document présente les détails techniques de l'application Vue.js. Il contie
 
 ## Structure du Projet
 
-```
+```text
 /
 ├── docs/               # Documentation du projet
 ├── public/             # Ressources publiques (non transformées)
