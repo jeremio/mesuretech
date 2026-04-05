@@ -15,27 +15,18 @@ function toggleLanguage() {
   <div class="min-h-screen flex flex-col">
     <header class="bg-gray-800 text-white py-4 shadow-md">
       <nav class="container mx-auto px-4 flex items-center justify-between">
-        <h1 class="text-xl font-bold">
+        <router-link
+          to="/"
+          class="text-xl font-bold hover:text-blue-300 transition-colors"
+        >
           MesureTech
-        </h1>
+        </router-link>
         <div class="flex gap-6 items-center">
-          <router-link to="/" class="hover:text-blue-300 transition-colors">
-            {{ t('nav_home') }}
-          </router-link>
-
-          <router-link to="/tools/converters" class="hover:text-blue-300 transition-colors">
-            {{ t('nav_tools_converters') }}
-          </router-link>
-
-          <router-link to="/tools/guide" class="hover:text-blue-300 transition-colors">
-            {{ t('nav_tools_guide') }}
-          </router-link>
-
           <button
             class="ml-4 bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-sm transition-colors"
             @click="toggleLanguage"
           >
-            {{ currentLanguage === 'fr' ? 'EN' : 'FR' }}
+            {{ currentLanguage === "fr" ? "EN" : "FR" }}
           </button>
         </div>
       </nav>
@@ -53,8 +44,11 @@ function toggleLanguage() {
       <div class="container mx-auto px-4 flex justify-between items-center">
         <p>© {{ new Date().getFullYear() }} MesureTech</p>
         <div class="flex gap-4">
-          <router-link to="/about" class="text-white hover:text-blue-300 transition-colors">
-            {{ t('nav_about') }}
+          <router-link
+            to="/about"
+            class="text-white hover:text-blue-300 transition-colors"
+          >
+            {{ t("nav_about") }}
           </router-link>
         </div>
       </div>

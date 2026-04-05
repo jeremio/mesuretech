@@ -1,6 +1,8 @@
-import type { ConversionFactor, UnitOption } from '@/composables/useUnitConverter'
+import type {
+  ConversionFactor,
+  UnitOption,
+} from '@/composables/useUnitConverter'
 
-// Options d'unités pour les données informatiques
 export const dataUnits: UnitOption[] = [
   { value: 'bit', label: 'bit' },
   { value: 'byte', label: 'byte' },
@@ -9,11 +11,10 @@ export const dataUnits: UnitOption[] = [
   { value: 'gigabyte', label: 'gigabyte' },
   { value: 'terabyte', label: 'terabyte' },
   { value: 'petabyte', label: 'petabyte' },
+  { value: 'exabyte', label: 'exabyte' },
 ]
 
-// Facteurs de conversion pour les données informatiques
 export const dataConversionFactors: ConversionFactor = {
-  // Conversions à partir du bit
   bit: {
     bit: 1,
     byte: 0.125,
@@ -22,9 +23,9 @@ export const dataConversionFactors: ConversionFactor = {
     gigabyte: 1.25e-10,
     terabyte: 1.25e-13,
     petabyte: 1.25e-16,
+    exabyte: 1.25e-19,
   },
 
-  // Conversions à partir de l'octet (byte)
   byte: {
     bit: 8,
     byte: 1,
@@ -33,9 +34,9 @@ export const dataConversionFactors: ConversionFactor = {
     gigabyte: 1e-9,
     terabyte: 1e-12,
     petabyte: 1e-15,
+    exabyte: 1e-18,
   },
 
-  // Conversions à partir du kilooctet (KB)
   kilobyte: {
     bit: 8000,
     byte: 1000,
@@ -44,9 +45,9 @@ export const dataConversionFactors: ConversionFactor = {
     gigabyte: 0.000001,
     terabyte: 1e-9,
     petabyte: 1e-12,
+    exabyte: 1e-15,
   },
 
-  // Conversions à partir du mégaoctet (MB)
   megabyte: {
     bit: 8000000,
     byte: 1000000,
@@ -55,9 +56,9 @@ export const dataConversionFactors: ConversionFactor = {
     gigabyte: 0.001,
     terabyte: 0.000001,
     petabyte: 1e-9,
+    exabyte: 1e-12,
   },
 
-  // Conversions à partir du gigaoctet (GB)
   gigabyte: {
     bit: 8000000000,
     byte: 1000000000,
@@ -66,9 +67,9 @@ export const dataConversionFactors: ConversionFactor = {
     gigabyte: 1,
     terabyte: 0.001,
     petabyte: 0.000001,
+    exabyte: 1e-9,
   },
 
-  // Conversions à partir du téraoctet (TB)
   terabyte: {
     bit: 8000000000000,
     byte: 1000000000000,
@@ -77,9 +78,9 @@ export const dataConversionFactors: ConversionFactor = {
     gigabyte: 1000,
     terabyte: 1,
     petabyte: 0.001,
+    exabyte: 0.000001,
   },
 
-  // Conversions à partir du pétaoctet (PB)
   petabyte: {
     bit: 8000000000000000,
     byte: 1000000000000000,
@@ -88,5 +89,17 @@ export const dataConversionFactors: ConversionFactor = {
     gigabyte: 1000000,
     terabyte: 1000,
     petabyte: 1,
+    exabyte: 0.001,
+  },
+
+  exabyte: {
+    bit: 8000000000000000000,
+    byte: 1000000000000000000,
+    kilobyte: 1000000000000000,
+    megabyte: 1000000000000,
+    gigabyte: 1000000000,
+    terabyte: 1000000,
+    petabyte: 1000,
+    exabyte: 1,
   },
 }

@@ -8,26 +8,42 @@ const { t } = useI18n()
 
 <template>
   <div>
-    <h2 class="text-2xl font-semibold mb-4">
-      {{ t('unit_converters') }}
-    </h2>
-    <p class="text-gray-600 mb-6">
-      {{ t('converters_intro') }}
-    </p>
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <h1 class="text-2xl font-semibold text-gray-900">
+          {{ t("unit_converters") }}
+        </h1>
+        <p class="text-gray-500 mt-1 text-sm">
+          {{ t("converters_intro") }}
+        </p>
+      </div>
+      <router-link
+        to="/tools/guide"
+        class="text-sm text-gray-500 hover:text-gray-700 flex items-center gap-1 transition-colors"
+      >
+        <Icon name="book-open" :size="16" />
+        {{ t("nav_tools_guide") }}
+      </router-link>
+    </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+    >
       <router-link
         v-for="type in conversionTypes"
         :key="type.id"
         :to="type.path"
-        class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center hover:shadow-lg transition-shadow"
+        class="group border border-gray-200 rounded-lg p-5 flex items-center gap-4 hover:border-gray-400 hover:bg-gray-50 transition-all"
       >
-        <div class="p-3 rounded-full mb-3" :style="{ backgroundColor: `${type.color}15` }">
-          <Icon :name="type.icon" :size="24" :color="type.color" />
+        <div
+          class="rounded-lg p-2.5"
+          :style="{ backgroundColor: `${type.color}12` }"
+        >
+          <Icon :name="type.icon" :size="22" :color="type.color" />
         </div>
-        <h3 class="text-lg font-medium text-center">
+        <span class="font-medium text-gray-800 group-hover:text-gray-900">
           {{ t(type.id) }}
-        </h3>
+        </span>
       </router-link>
     </div>
   </div>

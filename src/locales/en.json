@@ -79,11 +79,9 @@
 
   "cubic_meter": "Cubic Meter",
   "liter": "Liter",
-  "milliliter": "Milliliter",
+  "deciliter": "Deciliter",
   "centiliter": "Centiliter",
-  "gallon": "Gallon",
-  "pint": "Pint",
-  "fluid_ounce": "Fluid Ounce",
+  "milliliter": "Milliliter",
 
   "square_meter": "Square Meter",
   "square_kilometer": "Square Kilometer",
@@ -95,6 +93,7 @@
   "meters_per_second": "Meters per Second",
   "kilometers_per_hour": "Kilometers per Hour",
   "miles_per_hour": "Miles per Hour",
+  "feet_per_second": "Feet per Second",
   "knot": "Knot",
 
   "bit": "Bit",
@@ -103,5 +102,6 @@
   "megabyte": "Megabyte",
   "gigabyte": "Gigabyte",
   "terabyte": "Terabyte",
-  "petabyte": "Petabyte"
+  "petabyte": "Petabyte",
+  "exabyte": "Exabyte"
 }

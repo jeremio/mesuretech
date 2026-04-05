@@ -79,11 +79,9 @@
 
   "cubic_meter": "Mètre cube",
   "liter": "Litre",
-  "milliliter": "Millilitre",
+  "deciliter": "Décilitre",
   "centiliter": "Centilitre",
-  "gallon": "Gallon",
-  "pint": "Pinte",
-  "fluid_ounce": "Once liquide",
+  "milliliter": "Millilitre",
 
   "square_meter": "Mètre carré",
   "square_kilometer": "Kilomètre carré",
@@ -95,7 +93,8 @@
   "meters_per_second": "Mètres par seconde",
   "kilometers_per_hour": "Kilomètres par heure",
   "miles_per_hour": "Miles par heure",
-  "knot": "Nœud",
+  "feet_per_second": "Pieds par seconde",
+  "knot": "Noeud",
 
   "bit": "Bit",
   "byte": "Octet",
@@ -103,5 +102,6 @@
   "megabyte": "Méga-octet",
   "gigabyte": "Giga-octet",
   "terabyte": "Téra-octet",
-  "petabyte": "Péta-octet"
+  "petabyte": "Péta-octet",
+  "exabyte": "Exa-octet"
 }

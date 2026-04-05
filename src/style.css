@@ -7,5 +7,5 @@ body {
 
 /* Styles pour les routeur-link actifs */
 .router-link-active {
-  @apply font-medium text-blue-500;
+  @apply font-medium text-white;
 }
