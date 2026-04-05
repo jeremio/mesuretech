@@ -23,7 +23,7 @@ function toggleLanguage() {
         </router-link>
         <div class="flex gap-6 items-center">
           <button
-            class="ml-4 bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-sm transition-colors"
+            class="ml-4 border border-gray-500 text-gray-300 hover:border-gray-300 hover:text-white px-3 py-1 rounded text-sm transition-colors"
             @click="toggleLanguage"
           >
             {{ currentLanguage === "fr" ? "EN" : "FR" }}
