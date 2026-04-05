@@ -12,24 +12,24 @@
     "check-translations": "node scripts/check-translations.mjs"
   },
   "dependencies": {
-    "vue": "^3.5.29",
-    "vue-i18n": "^11.2.8",
-    "vue-router": "^5.0.3"
+    "vue": "^3.5.32",
+    "vue-i18n": "^11.3.0",
+    "vue-router": "^5.0.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^7.6.1",
+    "@antfu/eslint-config": "^8.0.0",
     "@intlify/eslint-plugin-vue-i18n": "^4.3.0",
-    "@tailwindcss/vite": "^4.2.1",
-    "@types/node": "^24.11.0",
-    "@vitejs/plugin-vue": "^6.0.4",
-    "@vue/tsconfig": "^0.9.0",
+    "@tailwindcss/vite": "^4.2.2",
+    "@types/node": "^24.12.2",
+    "@vitejs/plugin-vue": "^6.0.5",
+    "@vue/tsconfig": "^0.9.1",
     "autoprefixer": "^10.4.27",
-    "eslint": "^9.39.3",
-    "tailwindcss": "^4.2.1",
+    "eslint": "^9.39.4",
+    "tailwindcss": "^4.2.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
-    "vite": "^7.3.1",
-    "vite-plugin-vue-devtools": "^8.0.7",
-    "vue-tsc": "^3.2.5"
+    "vite": "^8.0.3",
+    "vite-plugin-vue-devtools": "^8.1.1",
+    "vue-tsc": "^3.2.6"
   }
 }
