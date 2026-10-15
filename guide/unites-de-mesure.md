@@ -48,6 +48,14 @@ Les échelles de température n'ont pas le même zéro : on ne passe pas de l'un
 
 <UnitTable category="power" />
 
+## Force
+
+<UnitTable category="force" />
+
+## Fréquence
+
+<UnitTable category="frequency" />
+
 ## Angle
 
 <UnitTable category="angle" />

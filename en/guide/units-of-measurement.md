@@ -48,6 +48,14 @@ Temperature scales do not share the same zero: you cannot go from one to another
 
 <UnitTable category="power" />
 
+## Force
+
+<UnitTable category="force" />
+
+## Frequency
+
+<UnitTable category="frequency" />
+
 ## Angle
 
 <UnitTable category="angle" />

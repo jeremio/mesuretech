@@ -100,6 +100,41 @@ describe('valeurs exactes', () => {
     ['angle', 180, 'degree', 'radian', Math.PI],
     ['angle', 1, 'turn', 'gradian', 400],
     ['fuel', 100, 'km_per_liter', 'liters_per_100km', 1],
+    ['length', 1, 'scandinavian_mile', 'kilometer', 10],
+    ['length', 1, 'fathom', 'foot', 6],
+    ['length', 1, 'furlong', 'yard', 220],
+    ['length', 1000, 'thou', 'inch', 1],
+    ['length', 3937, 'us_survey_foot', 'meter', 1200],
+    ['length', 1, 'parsec', 'light_year', 3.2615637771674333],
+    ['mass', 1, 'troy_ounce', 'gram', 31.1034768],
+    ['mass', 7000, 'grain', 'pound', 1],
+    ['mass', 1, 'metric_pound', 'gram', 500],
+    ['mass', 1, 'long_hundredweight', 'pound', 112],
+    ['mass', 1, 'short_hundredweight', 'pound', 100],
+    ['volume', 1, 'uk_pint', 'milliliter', 568.26125],
+    ['volume', 1, 'us_pint', 'milliliter', 473.176473],
+    ['volume', 1, 'us_dry_pint', 'liter', 0.5506104713575],
+    ['volume', 1, 'us_legal_cup', 'milliliter', 240],
+    ['volume', 1, 'cup_metric', 'milliliter', 250],
+    ['volume', 1, 'tablespoon_australian', 'teaspoon_metric', 4],
+    ['volume', 1, 'us_gallon', 'cubic_inch', 231],
+    ['volume', 1, 'stere', 'cubic_meter', 1],
+    ['area', 1, 'centiare', 'square_meter', 1],
+    ['time', 1, 'julian_year', 'day', 365.25],
+    ['time', 1, 'common_year', 'day', 365],
+    ['time', 1, 'fortnight', 'day', 14],
+    ['energy', 1, 'calorie_it', 'joule', 4.1868],
+    ['energy', 1, 'terawatt_hour', 'kilowatt_hour', 1e9],
+    ['energy', 1, 'therm', 'megajoule', 105.4804],
+    ['pressure', 1, 'technical_atmosphere', 'bar', 0.980665],
+    ['power', 1, 'ton_of_refrigeration', 'btu_per_hour', 12000],
+    ['power', 1, 'electrical_horsepower', 'watt', 746],
+    ['angle', 6400, 'nato_mil', 'degree', 360],
+    ['force', 1, 'kilogram_force', 'newton', 9.80665],
+    ['force', 1, 'kip', 'pound_force', 1000],
+    ['frequency', 3000, 'revolutions_per_minute', 'hertz', 50],
+    ['frequency', 50, 'hertz', 'radians_per_second', 314.1592653589793],
+    ['speed', 1, 'speed_of_light', 'kilometers_per_second', 299792.458],
   ]
   for (const [category, value, from, to, expected] of cases) {
     it(`${value} ${from} = ${expected} ${to}`, () => {
@@ -138,7 +173,7 @@ describe('domaine de validité', () => {
 
   it('accepte les longueurs négatives (écarts) et refuse une unité inconnue', () => {
     expect(conv('length', -2, 'meter', 'centimeter')).toBe(-200)
-    expect(convert(getCategory('length')!, 1, 'meter', 'parsec')).toEqual({ ok: false, error: 'unknown_unit' })
+    expect(convert(getCategory('length')!, 1, 'meter', 'smoot')).toEqual({ ok: false, error: 'unknown_unit' })
   })
 })
 

@@ -3,6 +3,8 @@ import { angle } from './categories/angle'
 import { area } from './categories/area'
 import { data } from './categories/data'
 import { energy } from './categories/energy'
+import { force } from './categories/force'
+import { frequency } from './categories/frequency'
 import { fuel } from './categories/fuel'
 import { length } from './categories/length'
 import { mass } from './categories/mass'
@@ -28,6 +30,8 @@ export const categories: Category[] = [
   energy,
   pressure,
   power,
+  force,
+  frequency,
   angle,
   fuel,
 ]

@@ -2,7 +2,8 @@
 
 Convertisseurs d'unités exacts et guide des unités de mesure, en français et en anglais.
 
-- 13 grandeurs : longueur, masse, température, volume (y compris US et impérial), surface, vitesse, temps, données (préfixes décimaux et binaires), énergie, pression, puissance, angle, consommation de carburant.
+- 15 grandeurs : longueur, masse, température, volume (y compris US et impérial), surface, vitesse, temps, données (préfixes décimaux et binaires), énergie, pression, puissance, force, fréquence, angle, consommation de carburant.
+- Les unités homonymes sont distinguées et expliquées (pintes, tasses, gallons, onces, « livre », « tonne », « mile », calories, chevaux, années…).
 - Conversion en direct, inversion des unités, lien partageable (`?v=3&from=foot&to=yard`), mémorisation des dernières unités, tableau « dans toutes les unités ».
 - Nombres au format de la langue (`1 609,344` / `1,609.344`), saisie tolérante (`2,5`, `1 234,5`, `1e3`).
 - Guide : grandeurs physiques, unités, préfixes SI et binaires, systèmes d'unités.
