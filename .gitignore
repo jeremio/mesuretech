@@ -33,3 +33,10 @@ dist-ssr/
 
 # macOS
 .DS_Store
+
+# VitePress
+.vitepress/cache/
+.vitepress/dist/
+
+# Ancienne application (Vue + Vite), conservee localement en attendant validation
+_ancien/

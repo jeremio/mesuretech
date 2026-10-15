@@ -1,12 +1,78 @@
 [build]
-command = "pnpm build"
-publish = "dist"
+command = "pnpm test && pnpm typecheck && pnpm build"
+publish = ".vitepress/dist"
 
 [build.environment]
-NODE_VERSION = "22"
-PNPM_VERSION = "9"
+NODE_VERSION = "24"
+PNPM_VERSION = "12.4.1"
+
+# Anciennes adresses de l'application Vue, redirigees vers les pages VitePress
+[[redirects]]
+from = "/about"
+to = "/a-propos"
+status = 301
 
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+from = "/tools/converters"
+to = "/convertisseurs/"
+status = 301
+
+[[redirects]]
+from = "/tools/guide"
+to = "/guide/"
+status = 301
+
+[[redirects]]
+from = "/tools/converters/length"
+to = "/convertisseurs/longueur"
+status = 301
+
+[[redirects]]
+from = "/tools/converters/mass"
+to = "/convertisseurs/masse"
+status = 301
+
+[[redirects]]
+from = "/tools/converters/temperature"
+to = "/convertisseurs/temperature"
+status = 301
+
+[[redirects]]
+from = "/tools/converters/volume"
+to = "/convertisseurs/volume"
+status = 301
+
+[[redirects]]
+from = "/tools/converters/area"
+to = "/convertisseurs/surface"
+status = 301
+
+[[redirects]]
+from = "/tools/converters/speed"
+to = "/convertisseurs/vitesse"
+status = 301
+
+[[redirects]]
+from = "/tools/converters/data"
+to = "/convertisseurs/donnees"
+status = 301
+
+[[redirects]]
+from = "/tools/guide/physical_quantities"
+to = "/guide/grandeurs-physiques"
+status = 301
+
+[[redirects]]
+from = "/tools/guide/measurement_units"
+to = "/guide/unites-de-mesure"
+status = 301
+
+[[redirects]]
+from = "/tools/guide/si_prefixes"
+to = "/guide/prefixes-si"
+status = 301
+
+[[redirects]]
+from = "/tools/guide/systems_of_units"
+to = "/guide/systemes-d-unites"
+status = 301

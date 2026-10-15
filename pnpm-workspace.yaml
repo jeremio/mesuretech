@@ -1,4 +1,15 @@
 allowBuilds:
   esbuild: true
+shellEmulator: true
+trustPolicy: no-downgrade
+# Toute la branche Vite 5 est publiee apres des versions en trusted publishing : pnpm la voit
+# comme une baisse de confiance. Exception limitee a la version exacte tiree par VitePress 1.6,
+# a retirer au passage a VitePress 2 (Vite 8).
+trustPolicyExclude:
+  - vite@5.4.21
 overrides:
   esbuild: '>=0.28.1'
+  # Vite 5 (embarque par VitePress 1.6) exige esbuild 0.21 : on l'exclut de l'override global.
+  # Les failles connues de cette version ne touchent que le serveur de developpement local,
+  # pas le site statique publie. A retirer au passage a VitePress 2 (Vite 8).
+  vite@5>esbuild: ^0.21.5
