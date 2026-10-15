@@ -42,13 +42,15 @@ export const data: Category = {
       'Deux conventions coexistent. Les fabricants de disques utilisent les préfixes décimaux : 1 To = 1 000 000 000 000 octets. Windows compte en binaire (1 Gio = 1 073 741 824 octets) tout en affichant « Go ».',
       'C\'est pourquoi un disque vendu « 1 To » apparaît comme « 931 Go » sous Windows : il fait en réalité 931 Gio.',
       'Les débits réseau s\'expriment en bits : une connexion à 1 Gbit/s transfère au mieux 125 Mo par seconde.',
-      'Attention à la majuscule : « b » est le bit et « B » l\'octet en anglais (byte). 100 Mb/s (mégabits) font 12,5 MB/s (mégaoctets). En français, l\'octet s\'écrit « o » : Mo, Go.',
+      '« Byte » est le mot anglais pour octet : 1 byte = 1 octet = 8 bits. Les symboles se correspondent : B = o, kB = ko, MB = Mo, GB = Go, TB = To, et en binaire KiB = Kio, MiB = Mio, GiB = Gio. Un logiciel ou un jeu qui demande « 50 GB » demande donc 50 Go.',
+      'Attention à la majuscule : « b » est le bit et « B » le byte (l\'octet). 100 Mb/s (mégabits par seconde) font 12,5 MB/s, soit 12,5 Mo/s.',
     ],
     en: [
       'Two conventions coexist. Drive makers use decimal prefixes: 1 TB = 1,000,000,000,000 bytes. Windows counts in binary (1 GiB = 1,073,741,824 bytes) while displaying "GB".',
       'That is why a drive sold as "1 TB" shows up as "931 GB" in Windows: it is actually 931 GiB.',
       'Network speeds are given in bits: a 1 Gbit/s connection transfers at most 125 MB per second.',
       'Mind the case: "b" is a bit and "B" a byte. 100 Mb/s (megabits) is 12.5 MB/s (megabytes).',
+      'In French, a byte is called an « octet », symbol « o »: MB is written Mo, GB is Go, GiB is Gio.',
     ],
   },
 }

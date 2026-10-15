@@ -52,7 +52,8 @@ export const volume: Category = {
   },
   notes: {
     fr: [
-      'Une « pinte » n\'est pas la même partout : 568 mL au Royaume-Uni et en Irlande (pinte impériale), 473 mL aux États-Unis (pinte liquide US), 551 mL pour la pinte sèche américaine (grains, fruits). Au Canada, la pinte de bière est en principe impériale. En France, un « demi » vaut 25 cL et une « pinte » se sert souvent à 50 cL.',
+      'Une « pinte » n\'est pas la même partout : 568 mL au Royaume-Uni et en Irlande (pinte impériale), 473 mL aux États-Unis (pinte liquide US), 551 mL pour la pinte sèche américaine (grains, fruits). Au Canada, la pinte de bière est en principe impériale.',
+      'Au comptoir, les mots changent de sens selon le pays : en France, un « demi » vaut 25 cL et une « pinte » se sert souvent à 50 cL ; en Belgique, c\'est l\'inverse, la « pinte » désigne le verre standard de 25 cL et le « demi » 50 cL. Ce sont des usages, pas des unités légales : seul le volume indiqué sur le verre ou la carte fait foi.',
       'Même piège pour le gallon (3,785 L aux États-Unis contre 4,546 L au Royaume-Uni) et l\'once liquide (29,6 mL contre 28,4 mL). Le gallon impérial est plus grand, mais l\'once liquide impériale est plus petite.',
       'Quatre « tasses » coexistent : tasse US des recettes (236,6 mL), tasse légale US des étiquettes nutritionnelles (240 mL), tasse métrique d\'Australie, du Canada et de Nouvelle-Zélande (250 mL), et tasse impériale, rare (284 mL).',
       'En cuisine, la cuillère à café vaut 5 mL et la cuillère à soupe 15 mL ; en Australie, la cuillère à soupe vaut 20 mL.',
@@ -60,6 +61,7 @@ export const volume: Category = {
     ],
     en: [
       'A "pint" is not the same everywhere: 568 mL in the UK and Ireland (imperial pint), 473 mL in the US (US liquid pint), 551 mL for the US dry pint (grain, berries). In Canada, a pint of beer is in principle imperial.',
+      'At the bar, words change meaning across countries: in France a « demi » is 25 cL and a « pinte » is often served at 50 cL; in Belgium it is the other way round, a « pinte » is the standard 25 cL glass and a « demi » 50 cL. These are customs, not legal units: only the volume printed on the glass or the menu counts.',
       'Same trap for the gallon (3.785 L in the US versus 4.546 L in the UK) and the fluid ounce (29.6 mL versus 28.4 mL). The imperial gallon is larger, but the imperial fluid ounce is smaller.',
       'Four "cups" coexist: the US recipe cup (236.6 mL), the US legal cup used on nutrition labels (240 mL), the metric cup of Australia, Canada and New Zealand (250 mL), and the rare imperial cup (284 mL).',
       'A metric teaspoon is 5 mL and a metric tablespoon 15 mL; in Australia, a tablespoon is 20 mL.',

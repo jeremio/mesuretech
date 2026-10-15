@@ -49,6 +49,8 @@ In English, *a billion* is 10⁹. In French and most other European languages, *
 
 ## Binary prefixes (computing)
 
+A **byte** (symbol **B**) is eight **bits** (symbol b). In French, a byte is called an *octet* (symbol o): MB becomes Mo, GB becomes Go, GiB becomes Gio.
+
 Computer memory naturally comes in powers of 2. For years, "kilo" meant 1,024 rather than 1,000 there, which still causes confusion. Since 1998, the International Electrotechnical Commission (IEC) has defined separate binary prefixes:
 
 | Binary prefix | Symbol | Value | Close to |

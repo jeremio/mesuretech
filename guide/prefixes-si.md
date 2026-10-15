@@ -49,6 +49,8 @@ En français, un **billion** vaut 10¹² (mille milliards). En anglais, *a billi
 
 ## Les préfixes binaires (informatique)
 
+En anglais, l'octet se dit **byte**, de symbole **B** : un MB est un Mo, un GB un Go, un GiB un Gio. Attention à ne pas le confondre avec le **bit** (symbole b), huit fois plus petit.
+
 La mémoire informatique se compte naturellement en puissances de 2. Pendant des années, « kilo » y a signifié 1 024 au lieu de 1 000, ce qui crée encore des confusions. Depuis 1998, la Commission électrotechnique internationale (CEI) définit des préfixes binaires distincts :
 
 | Préfixe binaire | Symbole | Valeur | Proche de |
