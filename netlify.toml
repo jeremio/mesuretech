@@ -3,7 +3,7 @@ command = "pnpm test && pnpm typecheck && pnpm build"
 publish = ".vitepress/dist"
 
 [build.environment]
-NODE_VERSION = "24"
+NODE_VERSION = "26"
 PNPM_VERSION = "12.4.1"
 
 # Anciennes adresses de l'application Vue, redirigees vers les pages VitePress
