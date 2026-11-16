@@ -57,3 +57,8 @@ Une nouvelle grandeur : créer un fichier dans `src/units/categories/`, l'ajoute
   - l'override qui laisse esbuild en 0.21 pour Vite 5 ;
   - l'exception `trustPolicyExclude` sur `vite@5.4.21`.
 - Les failles connues de Vite 5 ne touchent que le serveur de développement local, pas le site statique publié.
+
+## Licence
+
+- Le contenu rédigé (guide des unités, textes des pages, en français et en anglais) est sous licence [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE-CONTENU) : réutilisation libre, y compris commerciale, en citant l'auteur.
+- Le code (convertisseurs, composants, scripts, tests) est sous [licence MIT](LICENSE).
